@@ -13,6 +13,7 @@
 		55A9A3B023A95A740035DBBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A9A3AE23A95A740035DBBA /* Main.storyboard */; };
 		55A9A3B223A95A750035DBBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A9A3B123A95A750035DBBA /* Assets.xcassets */; };
 		55A9A3B523A95A750035DBBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A9A3B323A95A750035DBBA /* LaunchScreen.storyboard */; };
+		55A9A3BF23A95EC20035DBBA /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9A3BE23A95EC20035DBBA /* BorderedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		55A9A3B123A95A750035DBBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55A9A3B423A95A750035DBBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55A9A3B623A95A750035DBBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A9A3BE23A95EC20035DBBA /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				55A9A3A823A95A740035DBBA /* AppDelegate.swift */,
+				55A9A3BC23A95E6A0035DBBA /* views */,
 				55A9A3AA23A95A740035DBBA /* SceneDelegate.swift */,
 				55A9A3AC23A95A740035DBBA /* ViewController.swift */,
 				55A9A3AE23A95A740035DBBA /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				55A9A3B623A95A750035DBBA /* Info.plist */,
 			);
 			path = swootch;
+			sourceTree = "<group>";
+		};
+		55A9A3BC23A95E6A0035DBBA /* views */ = {
+			isa = PBXGroup;
+			children = (
+				55A9A3BE23A95EC20035DBBA /* BorderedButton.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			files = (
 				55A9A3AD23A95A740035DBBA /* ViewController.swift in Sources */,
 				55A9A3A923A95A740035DBBA /* AppDelegate.swift in Sources */,
+				55A9A3BF23A95EC20035DBBA /* BorderedButton.swift in Sources */,
 				55A9A3AB23A95A740035DBBA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
