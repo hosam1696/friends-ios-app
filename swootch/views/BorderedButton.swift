@@ -12,6 +12,12 @@ import UIKit
 @IBDesignable
 class BorderedButton: UIButton {
     
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? UIColor.white : UIColor.black
+            tintColor = !isHighlighted ? UIColor.white : UIColor.black
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,6 +40,7 @@ class BorderedButton: UIButton {
         layer.cornerRadius = 12
     }
     
+        
 
     /*
     // Only override draw() if you perform custom drawing.
