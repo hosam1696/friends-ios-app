@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		55FCF82223AAE45700A17D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF82123AAE45700A17D30 /* AppDelegate.swift */; };
 		55FCF82423AAE45700A17D30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF82323AAE45700A17D30 /* SceneDelegate.swift */; };
-		55FCF82623AAE45700A17D30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF82523AAE45700A17D30 /* ViewController.swift */; };
+		55FCF82623AAE45700A17D30 /* CateeoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF82523AAE45700A17D30 /* CateeoriesVC.swift */; };
 		55FCF82923AAE45700A17D30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FCF82723AAE45700A17D30 /* Main.storyboard */; };
 		55FCF82C23AAE45700A17D30 /* coderswag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF82A23AAE45700A17D30 /* coderswag.xcdatamodeld */; };
 		55FCF82E23AAE45800A17D30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FCF82D23AAE45800A17D30 /* Assets.xcassets */; };
 		55FCF83123AAE45800A17D30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FCF82F23AAE45800A17D30 /* LaunchScreen.storyboard */; };
 		55FCF83C23AAE45800A17D30 /* coderswagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF83B23AAE45800A17D30 /* coderswagTests.swift */; };
+		55FCF84A23AAE94200A17D30 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF84923AAE94200A17D30 /* CategoryViewCell.swift */; };
+		55FCF84C23AAEC8B00A17D30 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF84B23AAEC8B00A17D30 /* Category.swift */; };
+		55FCF84F23AAEE0700A17D30 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF84E23AAEE0700A17D30 /* DataService.swift */; };
+		55FCF85123AAFB7700A17D30 /* ProductsVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF85023AAFB7700A17D30 /* ProductsVCViewController.swift */; };
+		55FCF85323AAFDA500A17D30 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF85223AAFDA500A17D30 /* Product.swift */; };
+		55FCF85523AB12BF00A17D30 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCF85423AB12BF00A17D30 /* ProductCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +37,7 @@
 		55FCF81E23AAE45700A17D30 /* coderswag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coderswag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FCF82123AAE45700A17D30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55FCF82323AAE45700A17D30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55FCF82523AAE45700A17D30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55FCF82523AAE45700A17D30 /* CateeoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateeoriesVC.swift; sourceTree = "<group>"; };
 		55FCF82823AAE45700A17D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55FCF82B23AAE45700A17D30 /* coderswag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coderswag.xcdatamodel; sourceTree = "<group>"; };
 		55FCF82D23AAE45800A17D30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +46,12 @@
 		55FCF83723AAE45800A17D30 /* coderswagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coderswagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FCF83B23AAE45800A17D30 /* coderswagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coderswagTests.swift; sourceTree = "<group>"; };
 		55FCF83D23AAE45800A17D30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55FCF84923AAE94200A17D30 /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewCell.swift; path = coderswag/CategoryViewCell.swift; sourceTree = SOURCE_ROOT; };
+		55FCF84B23AAEC8B00A17D30 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		55FCF84E23AAEE0700A17D30 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		55FCF85023AAFB7700A17D30 /* ProductsVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVCViewController.swift; sourceTree = "<group>"; };
+		55FCF85223AAFDA500A17D30 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		55FCF85423AB12BF00A17D30 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +95,15 @@
 			children = (
 				55FCF82123AAE45700A17D30 /* AppDelegate.swift */,
 				55FCF82323AAE45700A17D30 /* SceneDelegate.swift */,
-				55FCF82523AAE45700A17D30 /* ViewController.swift */,
+				55FCF84D23AAEDF400A17D30 /* services */,
+				55FCF84823AAE48200A17D30 /* models */,
+				55FCF84723AAE47600A17D30 /* views */,
+				55FCF84623AAE46500A17D30 /* controlls */,
 				55FCF82723AAE45700A17D30 /* Main.storyboard */,
 				55FCF82D23AAE45800A17D30 /* Assets.xcassets */,
-				55FCF82F23AAE45800A17D30 /* LaunchScreen.storyboard */,
 				55FCF83223AAE45800A17D30 /* Info.plist */,
 				55FCF82A23AAE45700A17D30 /* coderswag.xcdatamodeld */,
+				55FCF82F23AAE45800A17D30 /* LaunchScreen.storyboard */,
 			);
 			path = coderswag;
 			sourceTree = "<group>";
@@ -100,6 +115,41 @@
 				55FCF83D23AAE45800A17D30 /* Info.plist */,
 			);
 			path = coderswagTests;
+			sourceTree = "<group>";
+		};
+		55FCF84623AAE46500A17D30 /* controlls */ = {
+			isa = PBXGroup;
+			children = (
+				55FCF82523AAE45700A17D30 /* CateeoriesVC.swift */,
+				55FCF85023AAFB7700A17D30 /* ProductsVCViewController.swift */,
+			);
+			path = controlls;
+			sourceTree = "<group>";
+		};
+		55FCF84723AAE47600A17D30 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				55FCF84923AAE94200A17D30 /* CategoryViewCell.swift */,
+				55FCF85423AB12BF00A17D30 /* ProductCollectionViewCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		55FCF84823AAE48200A17D30 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				55FCF84B23AAEC8B00A17D30 /* Category.swift */,
+				55FCF85223AAFDA500A17D30 /* Product.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		55FCF84D23AAEDF400A17D30 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				55FCF84E23AAEE0700A17D30 /* DataService.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +253,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55FCF82623AAE45700A17D30 /* ViewController.swift in Sources */,
+				55FCF82623AAE45700A17D30 /* CateeoriesVC.swift in Sources */,
+				55FCF84F23AAEE0700A17D30 /* DataService.swift in Sources */,
+				55FCF85523AB12BF00A17D30 /* ProductCollectionViewCell.swift in Sources */,
+				55FCF85323AAFDA500A17D30 /* Product.swift in Sources */,
 				55FCF82C23AAE45700A17D30 /* coderswag.xcdatamodeld in Sources */,
 				55FCF82223AAE45700A17D30 /* AppDelegate.swift in Sources */,
 				55FCF82423AAE45700A17D30 /* SceneDelegate.swift in Sources */,
+				55FCF85123AAFB7700A17D30 /* ProductsVCViewController.swift in Sources */,
+				55FCF84A23AAE94200A17D30 /* CategoryViewCell.swift in Sources */,
+				55FCF84C23AAEC8B00A17D30 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
