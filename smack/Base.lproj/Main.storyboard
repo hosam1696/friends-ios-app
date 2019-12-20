@@ -11,7 +11,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SWRevealViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SWRevealView">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SWRevealView" customModule="smack" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -120,8 +120,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#CHANELS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meW-EU-dWb">
-                                        <rect key="frame" x="28" y="100" width="88" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#CHANNELS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meW-EU-dWb">
+                                        <rect key="frame" x="28" y="100" width="115" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="88" id="N2S-du-ViB"/>
                                             <constraint firstAttribute="height" constant="20.5" id="Tqv-Mr-21g"/>
@@ -146,6 +146,9 @@
                                                 <state key="normal" title="LOGIN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginBtnPressed:" destination="XID-eW-xKj" eventType="touchUpInside" id="A7Z-5m-Dbb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -160,6 +163,32 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kHc-hW-ByD">
                                         <rect key="frame" x="28" y="142.5" width="286" height="615.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChannelsCell" id="8Qj-FD-Z1g" customClass="ChannelViewCell" customModule="smack" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="286" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Qj-FD-Z1g" id="y6l-qZ-ctc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#DEV" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INO-Dr-jNf">
+                                                            <rect key="frame" x="0.0" y="14" width="40.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="INO-Dr-jNf" firstAttribute="centerY" secondItem="y6l-qZ-ctc" secondAttribute="centerY" id="aeK-X0-5JF"/>
+                                                        <constraint firstItem="INO-Dr-jNf" firstAttribute="leading" secondItem="y6l-qZ-ctc" secondAttribute="leadingMargin" id="cWh-gs-Ft6"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="channelName" destination="INO-Dr-jNf" id="IDF-JT-3Ga"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -194,10 +223,30 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GUV-ao-ftV"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="kHc-hW-ByD" id="oSd-JD-cle"/>
+                        <segue destination="VXU-j6-lop" kind="show" identifier="loginSegue" id="iMW-u5-fYi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJp-AQ-h77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1776.8115942028987" y="-134.59821428571428"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="8as-UP-RXm">
+            <objects>
+                <viewController id="VXU-j6-lop" customClass="LoginVC" customModule="smack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MfQ-Af-ISX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sfd-6C-tge"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7Eb-K4-DvW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TaI-re-YOf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2649" y="-135"/>
         </scene>
     </scenes>
     <resources>

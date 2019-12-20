@@ -8,31 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		51D91574B098B306287C8636 /* Pods_smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F3BE614368CC87A2FAB21A /* Pods_smack.framework */; };
-		555F551A23AC034900D23B0B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F551823AC034900D23B0B /* SWRevealViewController.m */; };
 		555F551F23AC05AA00D23B0B /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F551E23AC05AA00D23B0B /* ChatVC.swift */; };
 		555F552123AC05C000D23B0B /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F552023AC05C000D23B0B /* ChannelVC.swift */; };
 		555F552523AC11E000D23B0B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F552423AC11E000D23B0B /* GradientView.swift */; };
-		5569CEE023ABC885008C65E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569CEDF23ABC885008C65E3 /* AppDelegate.swift */; };
-		5569CEE223ABC885008C65E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569CEE123ABC885008C65E3 /* SceneDelegate.swift */; };
+		555F552823AC1F6500D23B0B /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F552723AC1F6500D23B0B /* constants.swift */; };
+		555F552A23AC1FD000D23B0B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F552923AC1FD000D23B0B /* LoginVC.swift */; };
+		555F552D23AC208000D23B0B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F552B23AC208000D23B0B /* SWRevealViewController.m */; };
 		5569CEE723ABC885008C65E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5569CEE523ABC885008C65E3 /* Main.storyboard */; };
 		5569CEE923ABC887008C65E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5569CEE823ABC887008C65E3 /* Assets.xcassets */; };
 		5569CEEC23ABC887008C65E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5569CEEA23ABC887008C65E3 /* LaunchScreen.storyboard */; };
+		55B6504A23AD2CF30020CBC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6504923AD2CF30020CBC3 /* AppDelegate.swift */; };
+		55B6504C23AD2E3D0020CBC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6504B23AD2E3C0020CBC3 /* SceneDelegate.swift */; };
+		55B6504E23AD30CD0020CBC3 /* ChannelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6504D23AD30CD0020CBC3 /* ChannelViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		555F551723AC034900D23B0B /* smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "smack-Bridging-Header.h"; sourceTree = "<group>"; };
-		555F551823AC034900D23B0B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "Smack Assets/SWReveal/SWRevealViewController.m"; sourceTree = SOURCE_ROOT; };
-		555F551923AC034900D23B0B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "Smack Assets/SWReveal/SWRevealViewController.h"; sourceTree = SOURCE_ROOT; };
 		555F551E23AC05AA00D23B0B /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		555F552023AC05C000D23B0B /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		555F552423AC11E000D23B0B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		555F552723AC1F6500D23B0B /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		555F552923AC1FD000D23B0B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		555F552B23AC208000D23B0B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		555F552C23AC208000D23B0B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		5569CEDC23ABC884008C65E3 /* smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5569CEDF23ABC885008C65E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5569CEE123ABC885008C65E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5569CEE623ABC885008C65E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5569CEE823ABC887008C65E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5569CEEB23ABC887008C65E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5569CEED23ABC887008C65E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B6504923AD2CF30020CBC3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		55B6504B23AD2E3C0020CBC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		55B6504D23AD30CD0020CBC3 /* ChannelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewCell.swift; sourceTree = "<group>"; };
 		8516D75DEE464ACE9C8F643C /* Pods-smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smack.debug.xcconfig"; path = "Target Support Files/Pods-smack/Pods-smack.debug.xcconfig"; sourceTree = "<group>"; };
 		E922B7890BFACA1C22527AF2 /* Pods-smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smack.release.xcconfig"; path = "Target Support Files/Pods-smack/Pods-smack.release.xcconfig"; sourceTree = "<group>"; };
 		F4F3BE614368CC87A2FAB21A /* Pods_smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,17 +68,19 @@
 		555F551623AC02FC00D23B0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				555F551923AC034900D23B0B /* SWRevealViewController.h */,
-				555F551823AC034900D23B0B /* SWRevealViewController.m */,
+				555F552C23AC208000D23B0B /* SWRevealViewController.h */,
+				555F552B23AC208000D23B0B /* SWRevealViewController.m */,
 				555F551723AC034900D23B0B /* smack-Bridging-Header.h */,
 			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
+			name = "Supporting Files";
+			path = "smack/Supporting Files";
+			sourceTree = SOURCE_ROOT;
 		};
 		555F551B23AC056200D23B0B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				555F551E23AC05AA00D23B0B /* ChatVC.swift */,
+				555F552923AC1FD000D23B0B /* LoginVC.swift */,
 				555F552023AC05C000D23B0B /* ChannelVC.swift */,
 			);
 			path = Controllers;
@@ -89,14 +97,22 @@
 		555F551D23AC058100D23B0B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				55B6504D23AD30CD0020CBC3 /* ChannelViewCell.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		555F552623AC1EC600D23B0B /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				555F552723AC1F6500D23B0B /* constants.swift */,
+			);
+			path = utilities;
 			sourceTree = "<group>";
 		};
 		5569CED323ABC884008C65E3 = {
 			isa = PBXGroup;
 			children = (
-				555F551623AC02FC00D23B0B /* Supporting Files */,
 				5569CEDE23ABC884008C65E3 /* smack */,
 				5569CEDD23ABC884008C65E3 /* Products */,
 				081DB051D75E81EC130F3CD8 /* Pods */,
@@ -115,11 +131,13 @@
 		5569CEDE23ABC884008C65E3 /* smack */ = {
 			isa = PBXGroup;
 			children = (
-				5569CEDF23ABC885008C65E3 /* AppDelegate.swift */,
-				5569CEE123ABC885008C65E3 /* SceneDelegate.swift */,
+				555F551623AC02FC00D23B0B /* Supporting Files */,
+				555F552623AC1EC600D23B0B /* utilities */,
 				555F551D23AC058100D23B0B /* Models */,
 				555F551C23AC057900D23B0B /* Views */,
 				555F551B23AC056200D23B0B /* Controllers */,
+				55B6504923AD2CF30020CBC3 /* AppDelegate.swift */,
+				55B6504B23AD2E3C0020CBC3 /* SceneDelegate.swift */,
 				5569CEE523ABC885008C65E3 /* Main.storyboard */,
 				5569CEE823ABC887008C65E3 /* Assets.xcassets */,
 				5569CEEA23ABC887008C65E3 /* LaunchScreen.storyboard */,
@@ -253,11 +271,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				555F551F23AC05AA00D23B0B /* ChatVC.swift in Sources */,
-				5569CEE023ABC885008C65E3 /* AppDelegate.swift in Sources */,
-				5569CEE223ABC885008C65E3 /* SceneDelegate.swift in Sources */,
-				555F551A23AC034900D23B0B /* SWRevealViewController.m in Sources */,
+				55B6504E23AD30CD0020CBC3 /* ChannelViewCell.swift in Sources */,
+				555F552A23AC1FD000D23B0B /* LoginVC.swift in Sources */,
+				555F552823AC1F6500D23B0B /* constants.swift in Sources */,
+				555F552D23AC208000D23B0B /* SWRevealViewController.m in Sources */,
+				55B6504A23AD2CF30020CBC3 /* AppDelegate.swift in Sources */,
 				555F552523AC11E000D23B0B /* GradientView.swift in Sources */,
 				555F552123AC05C000D23B0B /* ChannelVC.swift in Sources */,
+				55B6504C23AD2E3D0020CBC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +432,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsa.smack.smack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/smack-Bridging-Header.h";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "smack/Supporting Files/smack-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -432,7 +454,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsa.smack.smack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/smack-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "smack/Supporting Files/smack-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

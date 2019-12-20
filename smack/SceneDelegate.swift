@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  smack
+//  swootch
 //
-//  Created by Hosam Elnabawy on 12/19/19.
+//  Created by Hosam Elnabawy on 12/17/19.
 //  Copyright © 2019 Hosam Elnabawy. All rights reserved.
 //
 
