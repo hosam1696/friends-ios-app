@@ -9,13 +9,21 @@
 import UIKit
 
 class LoginVC: UIViewController {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    
+    // Outlets
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
+    
+    @IBAction func onCloseBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-    */
-
+    
+    
+    @IBAction func onLoginBtnPressed(_ sender: Any) {
+        
+        print("Login this user: \(userName.text) | \(password.text)")
+        
+    }
 }

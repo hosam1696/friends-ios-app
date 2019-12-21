@@ -8,5 +8,19 @@
 
 import Foundation
 
+// types
+typealias completionHandler = (_ success: Bool) -> ()
 
+
+let API_URL = "http://localhost:3005/v1"
+
+
+// Segues
 let LOGIN_SEGUE = "loginSegue"
+let UNWIND_TO_CHANNEL = "unwindToChannels"
+
+
+// User Defaults
+let TOKEN_KEY = "key"
+let LOGGED_IN_KEY = "LoggedIn"
+let USER_EMAIL = "userEmail"

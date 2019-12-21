@@ -20,6 +20,10 @@
 		55B6504A23AD2CF30020CBC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6504923AD2CF30020CBC3 /* AppDelegate.swift */; };
 		55B6504C23AD2E3D0020CBC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6504B23AD2E3C0020CBC3 /* SceneDelegate.swift */; };
 		55B6504E23AD30CD0020CBC3 /* ChannelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6504D23AD30CD0020CBC3 /* ChannelViewCell.swift */; };
+		55B6505023AD3D5F0020CBC3 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6504F23AD3D5F0020CBC3 /* CreateAccountVC.swift */; };
+		55B6505323AD78890020CBC3 /* authservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6505223AD78890020CBC3 /* authservice.swift */; };
+		55B6505F23AD9C890020CBC3 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6505E23AD9C890020CBC3 /* RoundedButton.swift */; };
+		55B6506123ADAA4F0020CBC3 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6506023ADAA4F0020CBC3 /* UserDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,13 @@
 		55B6504923AD2CF30020CBC3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B6504B23AD2E3C0020CBC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		55B6504D23AD30CD0020CBC3 /* ChannelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewCell.swift; sourceTree = "<group>"; };
+		55B6504F23AD3D5F0020CBC3 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		55B6505223AD78890020CBC3 /* authservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authservice.swift; sourceTree = "<group>"; };
+		55B6505423AD81880020CBC3 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B6505823AD818E0020CBC3 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B6505B23AD81930020CBC3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B6505E23AD9C890020CBC3 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		55B6506023ADAA4F0020CBC3 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		8516D75DEE464ACE9C8F643C /* Pods-smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smack.debug.xcconfig"; path = "Target Support Files/Pods-smack/Pods-smack.debug.xcconfig"; sourceTree = "<group>"; };
 		E922B7890BFACA1C22527AF2 /* Pods-smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smack.release.xcconfig"; path = "Target Support Files/Pods-smack/Pods-smack.release.xcconfig"; sourceTree = "<group>"; };
 		F4F3BE614368CC87A2FAB21A /* Pods_smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +93,7 @@
 				555F551E23AC05AA00D23B0B /* ChatVC.swift */,
 				555F552923AC1FD000D23B0B /* LoginVC.swift */,
 				555F552023AC05C000D23B0B /* ChannelVC.swift */,
+				55B6504F23AD3D5F0020CBC3 /* CreateAccountVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -90,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				555F552423AC11E000D23B0B /* GradientView.swift */,
+				55B6505E23AD9C890020CBC3 /* RoundedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +144,7 @@
 		5569CEDE23ABC884008C65E3 /* smack */ = {
 			isa = PBXGroup;
 			children = (
+				55B6505123AD78770020CBC3 /* services */,
 				555F551623AC02FC00D23B0B /* Supporting Files */,
 				555F552623AC1EC600D23B0B /* utilities */,
 				555F551D23AC058100D23B0B /* Models */,
@@ -146,9 +160,21 @@
 			path = smack;
 			sourceTree = "<group>";
 		};
+		55B6505123AD78770020CBC3 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				55B6505223AD78890020CBC3 /* authservice.swift */,
+				55B6506023ADAA4F0020CBC3 /* UserDataService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		A892767C27DC5A6CA2EA5BE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55B6505B23AD81930020CBC3 /* SwiftyJSON.framework */,
+				55B6505823AD818E0020CBC3 /* SocketIO.framework */,
+				55B6505423AD81880020CBC3 /* Alamofire.framework */,
 				F4F3BE614368CC87A2FAB21A /* Pods_smack.framework */,
 			);
 			name = Frameworks;
@@ -271,13 +297,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				555F551F23AC05AA00D23B0B /* ChatVC.swift in Sources */,
+				55B6506123ADAA4F0020CBC3 /* UserDataService.swift in Sources */,
 				55B6504E23AD30CD0020CBC3 /* ChannelViewCell.swift in Sources */,
 				555F552A23AC1FD000D23B0B /* LoginVC.swift in Sources */,
 				555F552823AC1F6500D23B0B /* constants.swift in Sources */,
 				555F552D23AC208000D23B0B /* SWRevealViewController.m in Sources */,
 				55B6504A23AD2CF30020CBC3 /* AppDelegate.swift in Sources */,
+				55B6505323AD78890020CBC3 /* authservice.swift in Sources */,
+				55B6505F23AD9C890020CBC3 /* RoundedButton.swift in Sources */,
 				555F552523AC11E000D23B0B /* GradientView.swift in Sources */,
 				555F552123AC05C000D23B0B /* ChannelVC.swift in Sources */,
+				55B6505023AD3D5F0020CBC3 /* CreateAccountVC.swift in Sources */,
 				55B6504C23AD2E3D0020CBC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsa.smack.smack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OBJC_BRIDGING_HEADER = "smack/Supporting Files/smack-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -454,6 +484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsa.smack.smack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OBJC_BRIDGING_HEADER = "smack/Supporting Files/smack-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

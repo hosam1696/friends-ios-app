@@ -11,7 +11,11 @@ import UIKit
 class ChannelVC: UIViewController {
     
     let channels: [String] = ["general", "dev"]
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func prepareForUnwind(_ segue: UIStoryboardSegue) {}
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +52,8 @@ extension ChannelVC: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ChannelsCell", for: indexPath) as? ChannelViewCell{
             
             cell.channelName.text = "#\(channels[indexPath.row])"
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            cell.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             return cell
             
         } else {
