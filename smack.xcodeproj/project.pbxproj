@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		51D91574B098B306287C8636 /* Pods_smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F3BE614368CC87A2FAB21A /* Pods_smack.framework */; };
+		5515AFCC23AEDB6B0082CD3B /* SelectAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515AFCB23AEDB6B0082CD3B /* SelectAvatarVC.swift */; };
+		5515AFCE23AEE3DC0082CD3B /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515AFCD23AEE3DC0082CD3B /* AvatarCollectionViewCell.swift */; };
+		5515AFD023AF010F0082CD3B /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515AFCF23AF010F0082CD3B /* CircleImage.swift */; };
+		5515AFD323AF16C90082CD3B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515AFD123AF16C90082CD3B /* ProfileVC.swift */; };
+		5515AFD423AF16C90082CD3B /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5515AFD223AF16C90082CD3B /* ProfileVC.xib */; };
 		555F551F23AC05AA00D23B0B /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F551E23AC05AA00D23B0B /* ChatVC.swift */; };
 		555F552123AC05C000D23B0B /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F552023AC05C000D23B0B /* ChannelVC.swift */; };
 		555F552523AC11E000D23B0B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F552423AC11E000D23B0B /* GradientView.swift */; };
@@ -27,6 +32,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5515AFCB23AEDB6B0082CD3B /* SelectAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarVC.swift; sourceTree = "<group>"; };
+		5515AFCD23AEE3DC0082CD3B /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
+		5515AFCF23AF010F0082CD3B /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		5515AFD123AF16C90082CD3B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		5515AFD223AF16C90082CD3B /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		555F551723AC034900D23B0B /* smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		555F551E23AC05AA00D23B0B /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		555F552023AC05C000D23B0B /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
@@ -76,6 +86,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5515AFD523AF16E30082CD3B /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				5515AFD223AF16C90082CD3B /* ProfileVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
 		555F551623AC02FC00D23B0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				555F551E23AC05AA00D23B0B /* ChatVC.swift */,
+				5515AFD123AF16C90082CD3B /* ProfileVC.swift */,
+				5515AFCB23AEDB6B0082CD3B /* SelectAvatarVC.swift */,
 				555F552923AC1FD000D23B0B /* LoginVC.swift */,
 				555F552023AC05C000D23B0B /* ChannelVC.swift */,
 				55B6504F23AD3D5F0020CBC3 /* CreateAccountVC.swift */,
@@ -103,6 +123,7 @@
 			children = (
 				555F552423AC11E000D23B0B /* GradientView.swift */,
 				55B6505E23AD9C890020CBC3 /* RoundedButton.swift */,
+				5515AFCF23AF010F0082CD3B /* CircleImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				55B6504D23AD30CD0020CBC3 /* ChannelViewCell.swift */,
+				5515AFCD23AEE3DC0082CD3B /* AvatarCollectionViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,6 +171,7 @@
 				555F552623AC1EC600D23B0B /* utilities */,
 				555F551D23AC058100D23B0B /* Models */,
 				555F551C23AC057900D23B0B /* Views */,
+				5515AFD523AF16E30082CD3B /* xib */,
 				555F551B23AC056200D23B0B /* Controllers */,
 				55B6504923AD2CF30020CBC3 /* AppDelegate.swift */,
 				55B6504B23AD2E3C0020CBC3 /* SceneDelegate.swift */,
@@ -241,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5515AFD423AF16C90082CD3B /* ProfileVC.xib in Resources */,
 				5569CEEC23ABC887008C65E3 /* LaunchScreen.storyboard in Resources */,
 				5569CEE923ABC887008C65E3 /* Assets.xcassets in Resources */,
 				5569CEE723ABC885008C65E3 /* Main.storyboard in Resources */,
@@ -297,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				555F551F23AC05AA00D23B0B /* ChatVC.swift in Sources */,
+				5515AFD023AF010F0082CD3B /* CircleImage.swift in Sources */,
 				55B6506123ADAA4F0020CBC3 /* UserDataService.swift in Sources */,
 				55B6504E23AD30CD0020CBC3 /* ChannelViewCell.swift in Sources */,
 				555F552A23AC1FD000D23B0B /* LoginVC.swift in Sources */,
@@ -304,8 +329,11 @@
 				555F552D23AC208000D23B0B /* SWRevealViewController.m in Sources */,
 				55B6504A23AD2CF30020CBC3 /* AppDelegate.swift in Sources */,
 				55B6505323AD78890020CBC3 /* authservice.swift in Sources */,
+				5515AFCE23AEE3DC0082CD3B /* AvatarCollectionViewCell.swift in Sources */,
 				55B6505F23AD9C890020CBC3 /* RoundedButton.swift in Sources */,
+				5515AFCC23AEDB6B0082CD3B /* SelectAvatarVC.swift in Sources */,
 				555F552523AC11E000D23B0B /* GradientView.swift in Sources */,
+				5515AFD323AF16C90082CD3B /* ProfileVC.swift in Sources */,
 				555F552123AC05C000D23B0B /* ChannelVC.swift in Sources */,
 				55B6505023AD3D5F0020CBC3 /* CreateAccountVC.swift in Sources */,
 				55B6504C23AD2E3D0020CBC3 /* SceneDelegate.swift in Sources */,

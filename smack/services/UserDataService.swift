@@ -18,14 +18,16 @@ class UserDataService {
     public private(set) var avatarColor = ""
     public private(set) var avatarName = ""
     public private(set) var name = ""
+    public private(set) var email = ""
     
     
-    
-    func setUserData (id: String, name: String, avatarName: String, avatarColor: String) {
+    func setUserData (id: String, name: String, avatarName: String, avatarColor: String, email: String) {
+        print("Save this user data \(name), \(id)")
         self.id = id
         self.name = name
         self.avatarName = avatarName
         self.avatarColor = avatarColor
+        self.email = email
     }
     
     func setAvatarName(avatarName: String) {

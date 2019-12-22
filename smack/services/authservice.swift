@@ -17,6 +17,8 @@ class AuthService {
     private let REGISTER_URL = "\(API_URL)/account/register"
     private let LOGIN_URL    = "\(API_URL)/account/login"
     private let CREATE_USER_URL    = "\(API_URL)/user/add"
+    private let GET_USER_BY_EMAIl    = "\(API_URL)/user/byEmail"
+    
     
     let defaults = UserDefaults.standard
     
@@ -51,7 +53,6 @@ class AuthService {
     let headers: HTTPHeaders = [
         "Content-Type": "application/json; charcter=utf-8"
     ]
-    
     
     
     func registerUser(email: String, password: String, completion: @escaping completionHandler) {
@@ -91,45 +92,42 @@ class AuthService {
                    encoder: JSONParameterEncoder.default,
                    headers: headers).responseJSON(completionHandler: { (response) in
                     debugPrint(response)
-                    if response.error == nil {
-                        //                        switch response.result {
-                        //                        case .success:
-                        //                            print("Login User Success: \(String(describing: response.value))")
-                        //                            if let json = response.value as? Dictionary<String, Any> {
-                        //                                if let email = json["user"] as? String {
-                        //                                    self.userEmail = email
-                        //                                }
-                        //
-                        //                                if let token = json["token"] as? String {
-                        //                                    self.userEmail = token
-                        //                                }
+                    switch response.result {
                         
-                        completion(true)
-                        // Swifty JSON
+                        
+                    case .success:
+                        print("Success")
                         guard let data = response.data else {return }
                         do {
                             
-                            
                             let json = try JSON(data: data)
+
                             
-                            self.userEmail = json["user"].stringValue
-                            self.authToken = json["token"].stringValue
-                            self.isLogged = true
-                            print("\(self.userEmail)\n \(self.authToken)")
+                            let message = json["message"].stringValue
+                            if message != "" {
+                                print("Error Message \(message)")
+                                completion(message)
+                            } else {
+                                self.userEmail = json["user"].stringValue
+                                self.authToken = json["token"].stringValue
+                                self.isLogged = true
+                                completion(true)
+                            }
+                            print("LoginUser: \(self.userEmail)\n \(self.authToken)")
                         } catch {
                             completion(false)
                         }
                         
-                        
-                        //                            }
-                        //                        case .failure:
-                        //                            print("Login Failed")
-                        //                        }
-                    } else {
+                    case .failure:
+                        guard let data = response.data else {return }
+                                               do {
+                                                   let json = try JSON(data: data)
+                                                print("Error Message: \(json["message"].rawValue)")
+                                               } catch {
+                                                
+                        }
                         completion(false)
-                        //
-                        //                        authToken = response.data["token"]
-                        //                        userEmail = response.data[email.lowercased()]
+                        
                     }
                    })
     }
@@ -145,43 +143,105 @@ class AuthService {
         }
         
         
-        let body: CreateUser = CreateUser(email: email.lowercased(), name: name, avatarName: avatarName, avatarColor: avatarColor)
-        
-        let myHeaders: HTTPHeaders = [
-            "Content-Type": "application/json; charcter=utf-8",
-            "Authorization": "Bearer \(AuthService.instance.authToken)"
+        let authHeaders: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(self.authToken)"
         ]
         
-        print("Auth Token:  \(AuthService.instance.authToken)")
+        let body: CreateUser = CreateUser(email: email.lowercased(), name: name, avatarName: avatarName, avatarColor: avatarColor)
+        
+        print("Auth Token:  \(self.authToken)")
         
         AF.request(CREATE_USER_URL,
                    method: .post,
                    parameters: body,
                    encoder: JSONParameterEncoder.default,
-                   headers: myHeaders).response { (response) in
-                    debugPrint(response)
-                    if response.error == nil {
-                        completion(true)
-                        // Swifty JSON
-                        guard let data = response.data else {return }
-                        do {
-                            let json = try JSON(data: data)
-                            let id = json["_id"].stringValue
-                            let name = json["name"].stringValue
-                            let avatarName = json["avatarName"].stringValue
-                            let avatarColor = json["avatarColor"].stringValue
-                            
-                            UserDataService.instance.setUserData(id: id, name: name, avatarName: avatarName, avatarColor: avatarColor)
-                            
-                            print("\(self.userEmail)\n \(self.authToken)")
-                        } catch {
-                            completion(false)
-                        }
+                   headers: authHeaders)
+            //        .validate(401)
+            .response { (response) in
+                debugPrint(response)
+                
+     switch response.result {
+         
+         
+     case .success:
+                    print("response Body Add Account: \(response.data!)")
+                    guard let data = response.data else {return }
+                    do {
+                        
+                        let json = try JSON(data: data)
+                     let message = json["message"].stringValue
+                                               if message != "" {
+                        print("Error Message \(message)")
+                        completion(message)
                         
                     } else {
-                        completion(false)
+
+                        self.assignUserInfo(data: data, completion: completion)
+                        completion(true)
                     }
+                    } catch {
+                        completion(false)
+        }
+                    
+     case .failure:
+                    completion(false)
+                }
         }
         
+    }
+    
+    
+    func findUserByEmail(completion: @escaping completionHandler) {
+        
+        let authHeaders: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(self.authToken)"
+        ]
+        
+        AF.request("\(GET_USER_BY_EMAIl)/\(userEmail)",
+            method: .get,
+            headers: authHeaders)
+            .response { (response) in
+                debugPrint(response)
+                if response.error == nil {
+                    // Swifty JSON
+                    print("response Body Find User: \(response.data!)")
+                    guard let data = response.data else {return }
+                    
+                    self.assignUserInfo(data: data, completion: completion)
+                    
+                } else {
+                    completion(false)
+                }
+        }
+    }
+    
+    func assignUserInfo(data: Data, completion: @escaping completionHandler) {
+        do {
+            
+            let json = try  JSON(data: data)
+            let id = json["_id"].stringValue
+            let name = json["name"].stringValue
+            let email = json["email"].stringValue
+            let avatarName = json["avatarName"].stringValue
+            let avatarColor = json["avatarColor"].stringValue
+            
+            UserDataService.instance.setUserData(id: id, name: name, avatarName: avatarName, avatarColor: avatarColor, email: email)
+            
+            print("\(self.userEmail)\n \(UserDataService.instance.id) | \(UserDataService.instance.name)")
+            completion(true)
+            
+        } catch {
+            completion(false)
+        }
+    }
+    
+    
+    func logout() {
+        userEmail = ""
+        AuthService.instance.isLogged = false
+        AuthService.instance.userEmail = ""
+        AuthService.instance.authToken = ""
     }
 }

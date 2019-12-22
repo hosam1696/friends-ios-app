@@ -12,6 +12,8 @@ class ChannelVC: UIViewController {
     
     let channels: [String] = ["general", "dev"]
     
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var avatarImg: CircleImage!
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func prepareForUnwind(_ segue: UIStoryboardSegue) {}
@@ -20,25 +22,37 @@ class ChannelVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.width - 100
+    
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.onUserChange(_:)), name: USER_DATA_CHANGE, object: nil)
+    
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @objc func onUserChange(_ notify: Notification) {
+        if AuthService.instance.isLogged  {
+            print("user name | \(UserDataService.instance.name) ")
+            loginBtn.setTitle(UserDataService.instance.name, for: .normal)
+            avatarImg.image = UIImage(named: UserDataService.instance.avatarName)
+        } else {
+            loginBtn.setTitle("Login", for: .normal)
+            avatarImg.image = UIImage(named: "profileDefault")
+        }
+        
+    }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: LOGIN_SEGUE, sender: self)
+        if AuthService.instance.isLogged {
+            let profile = ProfileVC()
+            profile.modalPresentationStyle = .custom
+            
+            self.present(profile, animated: true, completion: nil)
+            
+        } else {
+            performSegue(withIdentifier: LOGIN_SEGUE, sender: self)
+        }
     }
 }
 
