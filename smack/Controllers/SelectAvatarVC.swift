@@ -86,11 +86,9 @@ extension SelectAvatarVC: UICollectionViewDelegateFlowLayout, UICollectionViewDa
        
         let avatarName = styleType == .dark ? "dark": "light"
         UserDataService.instance.setAvatarName(avatarName: "\(avatarName)\(indexPath.item)")
-//        if let item = collectionView.cellForItem(at: indexPath) as? AvatarCollectionViewCell {
-//            item.registerCell(indexPath.item, type: .selected)
-//        }
+        NotificationCenter.default.post(name: SELECT_ONE_AVATAR, object: nil)
         
-        print("UserData Service \(UserDataService.instance.avatarName)")
+        print("UserData Service Avatar Name:  \(UserDataService.instance.avatarName)")
         self.dismiss(animated: true, completion: nil)
        
     }

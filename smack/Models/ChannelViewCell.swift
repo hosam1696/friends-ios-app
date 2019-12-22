@@ -26,6 +26,7 @@ class ChannelViewCell: UITableViewCell {
             self.layer.backgroundColor = UIColor(white: 1, alpha: 0).cgColor
         }
     }
+
     
     
 }

@@ -30,6 +30,22 @@ class CreateAccountVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
         
         view.addGestureRecognizer(tap)
+        
+        setNotificationsEvents()
+        
+    }
+    
+    private func setNotificationsEvents() {
+        NotificationCenter.default.addObserver(self, selector: #selector(CreateAccountVC.handleSelectAvatar(_:)), name: SELECT_ONE_AVATAR, object: nil)
+    }
+    
+    @objc func handleSelectAvatar(_ notify: Notification) {
+        print("Saved Avatar Name \(UserDataService.instance.avatarName)")
+         let savedAvatarName = UserDataService.instance.avatarName
+        if savedAvatarName != "" {
+            self.userImg.image = UIImage(named: savedAvatarName)
+            avatarName = savedAvatarName
+        }
     }
     
     @objc func handleTap() {
@@ -37,12 +53,12 @@ class CreateAccountVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("Saved Avatar Name \(UserDataService.instance.avatarName)")
-        let savedAvatarName = UserDataService.instance.avatarName
-        if savedAvatarName != "" {
-            self.userImg.image = UIImage(named: savedAvatarName)
-            avatarName = savedAvatarName
-        }
+//        print("Saved Avatar Name \(UserDataService.instance.avatarName)")
+//        let savedAvatarName = UserDataService.instance.avatarName
+//        if savedAvatarName != "" {
+//            self.userImg.image = UIImage(named: savedAvatarName)
+//            avatarName = savedAvatarName
+//        }
     }
     
     @IBAction func changeBgPressed(_ sender: Any) {

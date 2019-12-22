@@ -16,13 +16,14 @@ let API_URL = "http://localhost:3005/v1"
 
 
 // Notifications Contatnts
-let USER_DATA_CHANGE = Notification.Name("notifUserDataChanged")
-
+let USER_DATA_CHANGE = Notification.Name(rawValue: "notifUserDataChanged")
+let SELECT_ONE_AVATAR = Notification.Name(rawValue: "selectOneAvatar")
 
 // Segues
 let LOGIN_SEGUE = "loginSegue"
 let UNWIND_TO_CHANNEL = "unwindToChannels"
 let AVATAR_SEGUE = "avatarPickerSegue"
+let ADD_CHANNEL_SEGUE = "addChannelSegue"
 
 
 // User Defaults
