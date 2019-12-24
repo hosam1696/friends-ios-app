@@ -41,6 +41,7 @@ class FinalGoalVC: UIViewController {
         self.save { complete in
             if complete {
                 performSegue(withIdentifier: HOME_UNWIND, sender: nil)
+                NotificationCenter.default.post(name: UPDATE_GOALS_NOTIFY, object: "Event")
             }
         }
     }

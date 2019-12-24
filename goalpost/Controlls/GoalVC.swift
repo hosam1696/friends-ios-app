@@ -16,9 +16,10 @@ class GoalVC: UIViewController {
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func prepareForUnwind(_ segue: UIStoryboardSegue) {
-        
-    }
+    var refresher: UIRefreshControl = UIRefreshControl()
+    
+    @IBAction func prepareForUnwind(_ segue: UIStoryboardSegue) {}
+    
     var goals: [Goal] = []
     
     override func viewDidLoad() {
@@ -29,9 +30,24 @@ class GoalVC: UIViewController {
         
 //        let goal = Goal()
        
-
+        
+        refresher.addTarget(self, action: #selector(GoalVC.onRefresh(_:)), for: .valueChanged)
+        
+        tableView.refreshControl = refresher
+        
+    }
+    
+    @objc func onRefresh(_ s: Any) {
+        self.fetchCoreData()
         
         
+        // sleep(2) // stop the queue from executin
+        
+        //self.refresher.endRefreshing()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.refresher.endRefreshing()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,10 +119,17 @@ extension GoalVC: UITableViewDelegate, UITableViewDataSource {
             self.removeGoal(index: indexPath)
             self.fetchCoreData()
         })
+        let updateProgress = UITableViewRowAction(style: .normal, title: "Add 1", handler:  {
+            (rowAction, indexPath) in
+            
+            self.setProgress(atIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        })
         
         deleteAction.backgroundColor = UIColor.red
+        updateProgress.backgroundColor = UIColor.gray
 
-        return [deleteAction]
+        return [deleteAction, updateProgress]
     }
     
 }
@@ -140,5 +163,25 @@ extension GoalVC {
         } catch  {
             debugPrint("Error: \(error.localizedDescription)")
         }
+    }
+    
+    func setProgress(atIndexPath indexPath: IndexPath) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return }
+        
+        let chosenGoal = goals[indexPath.row]
+        
+        if chosenGoal.goalProgress < chosenGoal.goalCompletionValue {
+            chosenGoal.goalProgress += 1
+        } else {
+            return
+        }
+        
+        do {
+            try managedContext.save()
+        } catch {
+            debugPrint("Error Updating Progress")
+        }
+        
+    
     }
 }

@@ -77,5 +77,6 @@ extension AddGoalViewController: UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
         goalDescription.text = ""
         goalDescription.tintColor = UIColor.black
+        goalDescription.textColor = UIColor.black
     }
 }

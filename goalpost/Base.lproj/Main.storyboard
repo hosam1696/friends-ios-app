@@ -11,7 +11,7 @@
         <!--GoalVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="goalVC" id="BYZ-38-t0r" customClass="GoalVC" customModule="goalpost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="goalVC" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="GoalVC" customModule="goalpost" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
                                     <constraint firstAttribute="width" constant="250" id="qpr-kt-8eC"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v1M-gV-B3P">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v1M-gV-B3P">
                                 <rect key="frame" x="0.0" y="80" width="414" height="816"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -138,17 +138,42 @@
                                                         <constraint firstItem="0eL-ac-Gm7" firstAttribute="top" secondItem="icH-eQ-7jD" secondAttribute="top" constant="27.5" id="YGa-RU-sYC"/>
                                                     </constraints>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tM3-Oi-bKb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOAL COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9u-hM-WPL">
+                                                            <rect key="frame" x="57" y="16" width="300" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="cdh-0n-AMh"/>
+                                                                <constraint firstAttribute="width" constant="300" id="k5x-oE-B7O"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="T9u-hM-WPL" firstAttribute="centerY" secondItem="tM3-Oi-bKb" secondAttribute="centerY" id="AJF-fy-Hfz"/>
+                                                        <constraint firstItem="T9u-hM-WPL" firstAttribute="centerX" secondItem="tM3-Oi-bKb" secondAttribute="centerX" id="mrV-Kn-4d0"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="icH-eQ-7jD" firstAttribute="leading" secondItem="WWV-PN-XqN" secondAttribute="leadingMargin" id="2HJ-Pc-hGx"/>
                                                 <constraint firstItem="icH-eQ-7jD" firstAttribute="top" secondItem="WWV-PN-XqN" secondAttribute="topMargin" id="4o3-CO-Yq3"/>
+                                                <constraint firstItem="tM3-Oi-bKb" firstAttribute="leading" secondItem="WWV-PN-XqN" secondAttribute="leading" id="CMm-jN-N3z"/>
                                                 <constraint firstItem="pYj-Ko-LIW" firstAttribute="leading" secondItem="icH-eQ-7jD" secondAttribute="trailing" constant="10" id="OOU-LM-Psd"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="icH-eQ-7jD" secondAttribute="bottom" constant="7.5" id="Q0x-PX-RF7"/>
+                                                <constraint firstItem="tM3-Oi-bKb" firstAttribute="top" secondItem="WWV-PN-XqN" secondAttribute="top" id="S1F-zv-58G"/>
                                                 <constraint firstAttribute="trailing" secondItem="pYj-Ko-LIW" secondAttribute="trailing" constant="12" id="SEM-pL-jCd"/>
+                                                <constraint firstAttribute="trailing" secondItem="tM3-Oi-bKb" secondAttribute="trailing" id="jHz-Cy-KTF"/>
+                                                <constraint firstAttribute="bottom" secondItem="tM3-Oi-bKb" secondAttribute="bottom" id="tzQ-cX-2VQ"/>
                                                 <constraint firstItem="pYj-Ko-LIW" firstAttribute="centerY" secondItem="WWV-PN-XqN" secondAttribute="centerY" id="vJU-cV-JD1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="completionView" destination="tM3-Oi-bKb" id="ZdH-ZL-2Fj"/>
                                             <outlet property="goalDescription" destination="Hgn-EA-QC2" id="xxd-s0-Aia"/>
                                             <outlet property="goalProgress" destination="pYj-Ko-LIW" id="NIX-MD-fZX"/>
                                             <outlet property="goalType" destination="wf3-fp-rk0" id="NcJ-ET-aY9"/>
@@ -177,14 +202,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="151"/>
+            <point key="canvasLocation" x="131.8840579710145" y="150.66964285714286"/>
         </scene>
         <!--Add Goal View Controller-->
         <scene sceneID="gzy-6e-7qg">
             <objects>
-                <viewController storyboardIdentifier="addGoalVC" id="4dl-qB-cpK" customClass="AddGoalViewController" customModule="goalpost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addGoalVC" modalPresentationStyle="fullScreen" id="4dl-qB-cpK" customClass="AddGoalViewController" customModule="goalpost" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2FL-ua-AOT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jct-5G-YFn">
@@ -283,7 +308,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksy-kg-Jav">
-                                <rect key="frame" x="0.0" y="782" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="aRm-FQ-cnA"/>
@@ -331,9 +356,9 @@
         <!--Final GoalVC-->
         <scene sceneID="h0P-Ec-Nge">
             <objects>
-                <viewController id="k39-lv-QQc" customClass="FinalGoalVC" customModule="goalpost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="k39-lv-QQc" customClass="FinalGoalVC" customModule="goalpost" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8gl-Gr-Adi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6y-MZ-40u">
@@ -395,7 +420,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ii-W1-nhJ">
-                                <rect key="frame" x="0.0" y="782" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.4941176471" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="VjI-aG-m8q"/>
