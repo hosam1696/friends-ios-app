@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mX8-yU-bsg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mX8-yU-bsg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j4V-Rx-Axf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j4V-Rx-Axf">
                                 <rect key="frame" x="0.0" y="66" width="414" height="742"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -37,7 +37,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="digital" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-o8-5gH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                                                    <rect key="frame" x="0.0" y="5" width="414" height="170"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoddies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7w-BW-88K">
                                                     <rect key="frame" x="125" y="79.5" width="164" height="21"/>
@@ -54,10 +54,10 @@
                                             <constraints>
                                                 <constraint firstItem="P7w-BW-88K" firstAttribute="centerX" secondItem="SN2-vJ-4QL" secondAttribute="centerX" id="0Td-Dd-RBb"/>
                                                 <constraint firstItem="P7w-BW-88K" firstAttribute="centerX" secondItem="SN2-vJ-4QL" secondAttribute="centerX" id="29v-Vs-DsO"/>
-                                                <constraint firstItem="Pf0-o8-5gH" firstAttribute="top" secondItem="SN2-vJ-4QL" secondAttribute="top" id="4Lh-Qb-bkV"/>
+                                                <constraint firstItem="Pf0-o8-5gH" firstAttribute="top" secondItem="SN2-vJ-4QL" secondAttribute="top" constant="5" id="4Lh-Qb-bkV"/>
                                                 <constraint firstItem="Pf0-o8-5gH" firstAttribute="leading" secondItem="SN2-vJ-4QL" secondAttribute="leading" id="DSG-ZT-b15"/>
                                                 <constraint firstItem="P7w-BW-88K" firstAttribute="centerY" secondItem="SN2-vJ-4QL" secondAttribute="centerY" id="TSO-w3-qnf"/>
-                                                <constraint firstAttribute="bottom" secondItem="Pf0-o8-5gH" secondAttribute="bottom" id="TeL-yr-EeY"/>
+                                                <constraint firstAttribute="bottom" secondItem="Pf0-o8-5gH" secondAttribute="bottom" constant="5" id="TeL-yr-EeY"/>
                                                 <constraint firstItem="P7w-BW-88K" firstAttribute="centerY" secondItem="SN2-vJ-4QL" secondAttribute="centerY" id="Woy-nA-5mc"/>
                                                 <constraint firstAttribute="trailing" secondItem="Pf0-o8-5gH" secondAttribute="trailing" id="z6i-lc-wJl"/>
                                             </constraints>
@@ -202,7 +202,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart" catalog="system" width="64" height="50"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="digital" width="1024" height="703"/>
         <image name="hat01" width="500" height="500"/>
     </resources>
